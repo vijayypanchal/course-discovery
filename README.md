@@ -29,10 +29,13 @@ npm run dev
 ```bash
 php artisan serve
 
+# Access web main URL eg. http://127.0.0.1:8000/
+
+http://your-domain.com/
+
 -------------------------------------------------------------------------------------------------------------------------
 
 # Access your API endpoints
-
 
 # API Documentation for Course Discovery System
 
@@ -40,7 +43,7 @@ This document outlines the API endpoints, request methods, parameters, and respo
 
 ---
 
-## Base URL
+## Base URL eg. http://127.0.0.1:8000/api
 
 ```
 http://your-domain.com/api
