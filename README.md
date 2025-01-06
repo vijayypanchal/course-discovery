@@ -1,7 +1,7 @@
 # Installation Prerequisites
 
 - composer install
-- composer require laravel/ui
+- composer require laravel/ui (Optional)
 - php artisan ui bootstrap
 - npm install
 - npm install -D tailwindcss postcss autoprefixer
