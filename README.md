@@ -1,7 +1,3 @@
-Certainly! Below is a template for a **README.md** file for your project, which includes the setup instructions and other relevant information.
-
----
-
 # **Course Discovery Project**
 
 The **Course Discovery** project is designed to provide a platform for discovering and filtering various courses. This application uses **Laravel** for the backend and **Tailwind CSS** for the frontend, offering a responsive and user-friendly interface for browsing courses.
