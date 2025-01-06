@@ -1,3 +1,39 @@
+# Installation Prerequisites
+
+- composer install
+- composer require laravel/ui
+- php artisan ui bootstrap
+- npm install
+- npm install -D tailwindcss postcss autoprefixer
+- npx tailwindcss init
+
+# Clear Configuration and Cache:
+
+```bash
+php artisan config:clear
+php artisan route:clear
+php artisan cache:clear
+
+# Run the migration:
+
+```bash
+php artisan migrate
+
+# Compile assets
+
+```bash
+npm run dev
+
+# Start the Laravel development server:
+
+```bash
+php artisan serve
+
+-------------------------------------------------------------------------------------------------------------------------
+
+# Access your API endpoints
+
+
 # API Documentation for Course Discovery System
 
 This document outlines the API endpoints, request methods, parameters, and responses for the **Course Discovery System**.
