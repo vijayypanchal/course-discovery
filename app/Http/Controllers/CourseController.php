@@ -96,18 +96,18 @@ class CourseController extends Controller
         }
 
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric',
-            'instructor' => 'required|string',
-            'category' => 'required|string',
-            'difficulty_level' => 'required|string',
-            'duration' => 'required|string',
-            'ratings' => 'required|string',
-            'course_format' => 'required|string',
-            'certification' => 'required|string',
-            'release_date' => 'required|string',
-            'popularity' => 'required|string',
+            'title' => 'string|max:255',
+            'description' => 'string',
+            'price' => 'numeric',
+            'instructor' => 'string',
+            'category' => 'string',
+            'difficulty_level' => 'string',
+            'duration' => 'string',
+            'ratings' => 'string',
+            'course_format' => 'string',
+            'certification' => 'string',
+            'release_date' => 'string',
+            'popularity' => 'string',
         ]);
 
         $course->update($validated);
