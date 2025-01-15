@@ -51,13 +51,13 @@ Before you start, ensure that you have the following tools installed:
    composer install
    ```
 
-5. **Install Laravel UI **  
+5. **Install Laravel UI**  
    If you're using Bootstrap for front-end scaffolding, run this command:
    ```bash
    composer require laravel/ui
    ```
 
-6. **Generate Bootstrap Scaffolding (Optional)**  
+6. **Generate Bootstrap Scaffolding**  
    Run this command to generate the Bootstrap scaffolding (if you're using Bootstrap for the front-end):
    ```bash
    php artisan ui bootstrap
