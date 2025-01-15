@@ -51,7 +51,7 @@ Before you start, ensure that you have the following tools installed:
    composer install
    ```
 
-5. **Install Laravel UI (Optional)**  
+5. **Install Laravel UI **  
    If you're using Bootstrap for front-end scaffolding, run this command:
    ```bash
    composer require laravel/ui
