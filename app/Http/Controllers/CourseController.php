@@ -69,23 +69,39 @@ class CourseController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric',
-            'instructor' => 'required|string',
-            'category' => 'required|string',
-            'difficulty_level' => 'required|string',
-            'duration' => 'required|string',
-            'ratings' => 'required|string',
-            'course_format' => 'required|string',
-            'certification' => 'required|string',
-            'release_date' => 'required|string',
-            'popularity' => 'required|string',
-        ]);
+		try {
+			$validated = $request->validate([
+				'title' => 'required|string|max:255',
+				'description' => 'required|string',
+				'price' => 'required|numeric',
+				'instructor' => 'required|string',
+				'category' => 'required|string',
+				'difficulty_level' => 'required|string',
+				'duration' => 'required|string',
+				'ratings' => 'required|string',
+				'course_format' => 'required|string',
+				'certification' => 'required|string',
+				'release_date' => 'required|string',
+				'popularity' => 'required|string',
+			]);
 
-        $course = Course::create($validated);
-        return response()->json($course, 201);
+			$course = Course::create($validated);
+			return response()->json($course, 201);
+		} catch (\Illuminate\Validation\ValidationException $e) {
+			// Return validation errors
+			return response()->json([
+				'status' => 'error',
+				'message' => 'Validation failed',
+				'errors' => $e->errors(),
+			], 422);
+		} catch (\Exception $e) {
+			// Handle other exceptions
+			return response()->json([
+				'status' => 'error',
+				'message' => 'An unexpected error occurred',
+				'error' => $e->getMessage(),
+			], 500);
+		}
     }
 
     public function update(Request $request, $id)
@@ -95,23 +111,39 @@ class CourseController extends Controller
             return response()->json(['message' => 'Course not found'], 404);
         }
 
-        $validated = $request->validate([
-            'title' => 'string|max:255',
-            'description' => 'string',
-            'price' => 'numeric',
-            'instructor' => 'string',
-            'category' => 'string',
-            'difficulty_level' => 'string',
-            'duration' => 'string',
-            'ratings' => 'string',
-            'course_format' => 'string',
-            'certification' => 'string',
-            'release_date' => 'string',
-            'popularity' => 'string',
-        ]);
+		try {
+			$validated = $request->validate([
+				'title' => 'string|max:255',
+				'description' => 'string',
+				'price' => 'numeric',
+				'instructor' => 'string',
+				'category' => 'string',
+				'difficulty_level' => 'string',
+				'duration' => 'string',
+				'ratings' => 'string',
+				'course_format' => 'string',
+				'certification' => 'string',
+				'release_date' => 'string',
+				'popularity' => 'string',
+			]);
 
-        $course->update($validated);
-        return response()->json($course, 200);
+			$course->update($validated);
+			return response()->json($course, 200);
+		} catch (\Illuminate\Validation\ValidationException $e) {
+			// Return validation errors
+			return response()->json([
+				'status' => 'error',
+				'message' => 'Validation failed',
+				'errors' => $e->errors(),
+			], 422);
+		} catch (\Exception $e) {
+			// Handle other exceptions
+			return response()->json([
+				'status' => 'error',
+				'message' => 'An unexpected error occurred',
+				'error' => $e->getMessage(),
+			], 500);
+		}
     }
 
     public function destroy($id)
